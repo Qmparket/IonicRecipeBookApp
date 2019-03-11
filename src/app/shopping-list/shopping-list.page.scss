@@ -1,0 +1,22 @@
+form {
+    ion-list {
+        ion-button {
+            --color: #fff;
+            --border-radius: 5px;
+            width: 95%;
+            display: flex;
+            position: relative;
+            margin: 1rem auto;
+        } 
+    }
+}
+ion-list {
+    ion-label {
+        display: flex;
+        padding-right: 0;
+        div{
+            margin-left: auto;
+            color: gray;
+        }
+    }
+}

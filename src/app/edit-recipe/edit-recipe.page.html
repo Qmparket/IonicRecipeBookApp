@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons end>
+      <ion-title>{{mode}} Recipe</ion-title>
+    <ion-button (click)="onBackClicked()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form action="">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Title</ion-label>
+        <ion-input inputmode="text" [(ngModel)]="title" name="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Description</ion-label>
+        <ion-textarea [(ngModel)]="description" name="description"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Difficulty</ion-label>
+        <ion-select [(ngModel)]="difficulty" name="difficulty">
+          <ion-select-option *ngFor="let item of difficultyArr">{{item}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <div class="ingredients-btn">
+      <ion-button color="clear" (click)="onManageIngredients()">Manage Ingredients</ion-button>
+    </div>
+    <ion-list>
+      <ion-item *ngFor="let ingredient of ingredients; index as i">
+        <div>{{ingredient.name}} ({{ingredient.amount}})</div>
+      </ion-item>
+    </ion-list>
+    <div class="submit-btn">
+      <ion-button (click)="onSaveRecipe()" [disabled]="!difficulty || !title || !description">{{mode}} Recipe</ion-button>
+    </div>
+  </form>
+</ion-content>

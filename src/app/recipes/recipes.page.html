@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons end>
+        <ion-title>Recipes</ion-title>
+      <ion-button (click)="onNewRecipe()">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item detail="true" *ngFor="let recipe of recipes, index as i" button="true" (click)="OnRecipeClicked(i)">
+      <ion-grid>
+        <ion-row>
+          <h3>{{recipe.title}}</h3>
+        </ion-row>
+        <ion-row>
+          <ion-note>{{recipe.difficulty}}</ion-note>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,29 @@
+    .subtitle {
+        text-transform: uppercase;
+        color: #ccc;
+    }
+    ion-button.ingredients-btn {
+        --color: #bc7e40;
+        --border-radius: 5px;
+        width: 100%;
+        display: flex;
+        position: relative;
+        margin: 1rem auto;
+    } 
+
+    .right-column {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .left-column, .right-column {
+        ion-button {
+            width: 90%;
+        }
+}
+    ion-list{
+        border-bottom: 1px lightgray solid;
+        border-top: 1px lightgray solid;
+        ion-item:last-child{
+            --inner-border-width: 0;
+        }
+    }

@@ -8,42 +8,50 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'shopping-list',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../shopping-list/shopping-list.module#ShoppingListPageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'recipes',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
-          }
-        ]
-      },
-      {
-        path: 'tab3',
-        children: [
+            loadChildren: '../recipes/recipes.module#RecipesPageModule'
+          },
           {
-            path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            path: 'edit-recipe',
+            loadChildren: '../edit-recipe/edit-recipe.module#EditRecipePageModule'
+          },
+          {
+            path: 'recipe',
+            children: [
+              {
+                path: '',
+                loadChildren: '../recipe/recipe.module#RecipePageModule'
+              },
+              {
+                path: 'edit-recipe',
+                loadChildren: '../edit-recipe/edit-recipe.module#EditRecipePageModule'
+              }
+            ]
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/shopping-list',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/shopping-list',
     pathMatch: 'full'
   }
 ];

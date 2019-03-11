@@ -1,0 +1,24 @@
+$primary: #bc7e40;
+form {
+    .submit-btn {
+        ion-button {
+            --color: #fff;
+            --border-radius: 5px;
+            width: 95%;
+            display: flex;
+            position: relative;
+            margin: 1rem auto;
+        } 
+    }
+    
+    .ingredients-btn{
+        ion-button {
+            --color: #bc7e40;
+            --border-radius: 5px;
+            width: 95%;
+            display: flex;
+            position: relative;
+            margin: 1rem auto;
+        } 
+    }
+}
